@@ -1,0 +1,17 @@
+<rsb:script xmlns:rsb="http://www.rssbus.com/ns/rsbscript/2">
+  <rsb:info title="Sys_Indexes" description="This is a system table that lists the indexes of the table.">
+    <attr name="IndexName"                    desc="The name of the index." />
+    <attr name="ColumnName"                   desc="The name of the column." />
+    <attr name="CatalogName"                  desc="The name of the catalog." />
+    <attr name="SchemaName"                   desc="The name of the schema." />
+    <attr name="TableName"                    desc="The name of the table." />
+    <attr name="IsUnique"   xs:type="boolean" desc="Indicates whether the index value is unique."/>
+    <attr name="IsPrimary"  xs:type="boolean" desc="Indicates whether the column is primary key."  />
+    <attr name="Type"                         desc="The type of the column." />
+    <attr name="SortOrder"                    desc="The order used in the collation of the index." />
+    
+    <input name="TableName" desc="The name of the table to list indexes for." />
+  </rsb:info>
+
+  <rsb:push op="coreListIndexes" />
+</rsb:script>

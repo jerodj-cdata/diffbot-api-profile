@@ -1,0 +1,182 @@
+<api:script>
+  <api:info title="GenericQuery_Person" desc="Generated schema file. Accepts URL encoded query string " other:queryslicercolumn="dql_query" xmlns:other="http://apiscript.com/ns?v1">
+    <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
+    <attr name="entity.age" xs:type="int" readonly="False" other:xPath="/json/data/entity/age" />
+    <attr name="entity.allDescriptions" xs:type="string" readonly="False" other:xPath="/json/data/entity/allDescriptions" />
+    <attr name="entity.allNames" xs:type="string" readonly="False" other:xPath="/json/data/entity/allNames" />
+    <attr name="entity.allOriginHashes" xs:type="string" readonly="False" other:xPath="/json/data/entity/allOriginHashes" />
+    <attr name="entity.allUris" xs:type="string" readonly="False" other:xPath="/json/data/entity/allUris" />
+    <attr name="entity.angellistUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/angellistUri" />
+    <attr name="entity.articles" xs:type="string" readonly="False" other:xPath="/json/data/entity/articles" />
+    <attr name="entity.awards" xs:type="string" readonly="False" other:xPath="/json/data/entity/awards" />
+    <attr name="entity.birthDate.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/birthDate/precision" />
+    <attr name="entity.birthDate.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthDate/str" />
+    <attr name="entity.birthDate.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/birthDate/timestamp" />
+    <attr name="entity.birthPlace.address" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/address" />
+    <attr name="entity.birthPlace.city.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/diffbotUri" />
+    <attr name="entity.birthPlace.city.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/image" />
+    <attr name="entity.birthPlace.city.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/name" />
+    <attr name="entity.birthPlace.city.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/summary" />
+    <attr name="entity.birthPlace.city.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/targetDiffbotId" />
+    <attr name="entity.birthPlace.city.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/type" />
+    <attr name="entity.birthPlace.city.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/city/types" />
+    <attr name="entity.birthPlace.country.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/diffbotUri" />
+    <attr name="entity.birthPlace.country.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/image" />
+    <attr name="entity.birthPlace.country.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/name" />
+    <attr name="entity.birthPlace.country.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/summary" />
+    <attr name="entity.birthPlace.country.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/targetDiffbotId" />
+    <attr name="entity.birthPlace.country.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/type" />
+    <attr name="entity.birthPlace.country.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/country/types" />
+    <attr name="entity.birthPlace.isCurrent" xs:type="bool" readonly="False" other:xPath="/json/data/entity/birthPlace/isCurrent" />
+    <attr name="entity.birthPlace.latitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/birthPlace/latitude" />
+    <attr name="entity.birthPlace.longitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/birthPlace/longitude" />
+    <attr name="entity.birthPlace.metroArea.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/diffbotUri" />
+    <attr name="entity.birthPlace.metroArea.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/image" />
+    <attr name="entity.birthPlace.metroArea.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/name" />
+    <attr name="entity.birthPlace.metroArea.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/summary" />
+    <attr name="entity.birthPlace.metroArea.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/targetDiffbotId" />
+    <attr name="entity.birthPlace.metroArea.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/type" />
+    <attr name="entity.birthPlace.metroArea.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/metroArea/types" />
+    <attr name="entity.birthPlace.postalCode" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/postalCode" />
+    <attr name="entity.birthPlace.precision" xs:type="double" readonly="False" other:xPath="/json/data/entity/birthPlace/precision" />
+    <attr name="entity.birthPlace.region.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/diffbotUri" />
+    <attr name="entity.birthPlace.region.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/image" />
+    <attr name="entity.birthPlace.region.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/name" />
+    <attr name="entity.birthPlace.region.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/summary" />
+    <attr name="entity.birthPlace.region.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/targetDiffbotId" />
+    <attr name="entity.birthPlace.region.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/type" />
+    <attr name="entity.birthPlace.region.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/region/types" />
+    <attr name="entity.birthPlace.street" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/street" />
+    <attr name="entity.birthPlace.subregion.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/diffbotUri" />
+    <attr name="entity.birthPlace.subregion.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/image" />
+    <attr name="entity.birthPlace.subregion.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/name" />
+    <attr name="entity.birthPlace.subregion.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/summary" />
+    <attr name="entity.birthPlace.subregion.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/targetDiffbotId" />
+    <attr name="entity.birthPlace.subregion.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/type" />
+    <attr name="entity.birthPlace.subregion.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/subregion/types" />
+    <attr name="entity.birthPlace.surfaceForm" xs:type="string" readonly="False" other:xPath="/json/data/entity/birthPlace/surfaceForm" />
+    <attr name="entity.blogUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/blogUri" />
+    <attr name="entity.colleagues" xs:type="string" readonly="False" other:xPath="/json/data/entity/colleagues" />
+    <attr name="entity.crawlTimestamp" xs:type="int" readonly="False" other:xPath="/json/data/entity/crawlTimestamp" />
+    <attr name="entity.crunchbaseUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/crunchbaseUri" />
+    <attr name="entity.description" xs:type="string" readonly="False" other:xPath="/json/data/entity/description" />
+    <attr name="entity.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/diffbotUri" />
+    <attr name="entity.educations" xs:type="string" readonly="False" other:xPath="/json/data/entity/educations" />
+    <attr name="entity.emailAddresses" xs:type="string" readonly="False" other:xPath="/json/data/entity/emailAddresses" />
+    <attr name="entity.employments" xs:type="string" readonly="False" other:xPath="/json/data/entity/employments" />
+    <attr name="entity.facebookUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/facebookUri" />
+    <attr name="entity.gender.normalizedValue" xs:type="string" readonly="False" other:xPath="/json/data/entity/gender/normalizedValue" />
+    <attr name="entity.githubUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/githubUri" />
+    <attr name="entity.googlePlusUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/googlePlusUri" />
+    <attr name="entity.height" xs:type="double" readonly="False" other:xPath="/json/data/entity/height" />
+    <attr name="entity.homepageUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/homepageUri" />
+    <attr name="entity.id" xs:type="string" readonly="False" other:xPath="/json/data/entity/id" />
+    <attr name="entity.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/image" />
+    <attr name="entity.images" xs:type="string" readonly="False" other:xPath="/json/data/entity/images" />
+    <attr name="entity.importance" xs:type="double" readonly="False" other:xPath="/json/data/entity/importance" />
+    <attr name="entity.instagramUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/instagramUri" />
+    <attr name="entity.interests" xs:type="string" readonly="False" other:xPath="/json/data/entity/interests" />
+    <attr name="entity.languages" xs:type="string" readonly="False" other:xPath="/json/data/entity/languages" />
+    <attr name="entity.linkedInUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/linkedInUri" />
+    <attr name="entity.location.address" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/address" />
+    <attr name="entity.location.city.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/diffbotUri" />
+    <attr name="entity.location.city.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/image" />
+    <attr name="entity.location.city.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/name" />
+    <attr name="entity.location.city.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/summary" />
+    <attr name="entity.location.city.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/targetDiffbotId" />
+    <attr name="entity.location.city.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/type" />
+    <attr name="entity.location.city.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/types" />
+    <attr name="entity.location.country.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/diffbotUri" />
+    <attr name="entity.location.country.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/image" />
+    <attr name="entity.location.country.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/name" />
+    <attr name="entity.location.country.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/summary" />
+    <attr name="entity.location.country.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/targetDiffbotId" />
+    <attr name="entity.location.country.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/type" />
+    <attr name="entity.location.country.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/types" />
+    <attr name="entity.location.isCurrent" xs:type="bool" readonly="False" other:xPath="/json/data/entity/location/isCurrent" />
+    <attr name="entity.location.latitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/latitude" />
+    <attr name="entity.location.longitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/longitude" />
+    <attr name="entity.location.metroArea.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/diffbotUri" />
+    <attr name="entity.location.metroArea.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/image" />
+    <attr name="entity.location.metroArea.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/name" />
+    <attr name="entity.location.metroArea.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/summary" />
+    <attr name="entity.location.metroArea.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/targetDiffbotId" />
+    <attr name="entity.location.metroArea.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/type" />
+    <attr name="entity.location.metroArea.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/types" />
+    <attr name="entity.location.postalCode" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/postalCode" />
+    <attr name="entity.location.precision" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/precision" />
+    <attr name="entity.location.region.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/diffbotUri" />
+    <attr name="entity.location.region.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/image" />
+    <attr name="entity.location.region.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/name" />
+    <attr name="entity.location.region.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/summary" />
+    <attr name="entity.location.region.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/targetDiffbotId" />
+    <attr name="entity.location.region.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/type" />
+    <attr name="entity.location.region.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/types" />
+    <attr name="entity.location.street" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/street" />
+    <attr name="entity.location.subregion.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/diffbotUri" />
+    <attr name="entity.location.subregion.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/image" />
+    <attr name="entity.location.subregion.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/name" />
+    <attr name="entity.location.subregion.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/summary" />
+    <attr name="entity.location.subregion.targetDiffbotId" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/targetDiffbotId" />
+    <attr name="entity.location.subregion.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/type" />
+    <attr name="entity.location.subregion.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/types" />
+    <attr name="entity.location.surfaceForm" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/surfaceForm" />
+    <attr name="entity.location.venue" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/venue" />
+    <attr name="entity.locations" xs:type="string" readonly="False" other:xPath="/json/data/entity/locations" />
+    <attr name="entity.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/name" />
+    <attr name="entity.nameDetail.firstName" xs:type="string" readonly="False" other:xPath="/json/data/entity/nameDetail/firstName" />
+    <attr name="entity.nameDetail.lastName" xs:type="string" readonly="False" other:xPath="/json/data/entity/nameDetail/lastName" />
+    <attr name="entity.nameDetail.middleName" xs:type="string" readonly="False" other:xPath="/json/data/entity/nameDetail/middleName" />
+    <attr name="entity.nameDetail.nicknames" xs:type="string" readonly="False" other:xPath="/json/data/entity/nameDetail/nicknames" />
+    <attr name="entity.nationalities" xs:type="string" readonly="False" other:xPath="/json/data/entity/nationalities" />
+    <attr name="entity.nbFollowers" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbFollowers" />
+    <attr name="entity.nbIncomingEdges" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbIncomingEdges" />
+    <attr name="entity.nbOrigins" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbOrigins" />
+    <attr name="entity.netWorth.currency" xs:type="string" readonly="False" other:xPath="/json/data/entity/netWorth/currency" />
+    <attr name="entity.netWorth.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/netWorth/value" />
+    <attr name="entity.origin" xs:type="string" readonly="False" other:xPath="/json/data/entity/origin" />
+    <attr name="entity.origins" xs:type="string" readonly="False" other:xPath="/json/data/entity/origins" />
+    <attr name="entity.phoneNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/phoneNumbers" />
+    <attr name="entity.politicalAffiliation" xs:type="string" readonly="False" other:xPath="/json/data/entity/politicalAffiliation" />
+    <attr name="entity.religion.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/religion/str" />
+    <attr name="entity.skills" xs:type="string" readonly="False" other:xPath="/json/data/entity/skills" />
+    <attr name="entity.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/summary" />
+    <attr name="entity.twitterUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/twitterUri" />
+    <attr name="entity.type" xs:type="string" readonly="False" other:xPath="/json/data/entity/type" />
+    <attr name="entity.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/types" />
+    <attr name="entity.unions" xs:type="string" readonly="False" other:xPath="/json/data/entity/unions" />
+    <attr name="entity.wikipediaPageviews" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviews" />
+    <attr name="entity.wikipediaPageviewsGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsGrowth" />
+    <attr name="entity.wikipediaPageviewsLastQuarter" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastQuarter" />
+    <attr name="entity.wikipediaPageviewsLastQuarterGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastQuarterGrowth" />
+    <attr name="entity.wikipediaPageviewsLastYear" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastYear" />
+    <attr name="entity.wikipediaPageviewsLastYearGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastYearGrowth" />
+    <attr name="entity.wikipediaUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/wikipediaUri" />
+    <attr name="entity.youtubeUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/youtubeUri" />
+    <attr name="entity_ctx.inner_hits.employments" xs:type="string" readonly="False" other:xPath="/json/data/entity_ctx/inner_hits/employments" />
+    <attr name="entity_ctx.matched_clauses" xs:type="string" readonly="False" other:xPath="/json/data/entity_ctx/matched_clauses" />
+    <attr name="score" xs:type="double" readonly="False" other:xPath="/json/data/score" />
+    <input name="dql_query" xs:type="String" required="True" />
+  </api:info>
+  
+   <!-- Setting global parameters -->
+  <api:set attr="ContentType" value="application/json" /> 
+  
+   <!-- Set authorization parameters -->
+
+    <!-- Using APIKey --> 
+    <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
+    <api:set attr="auth" value="[_connection.APIToken]:" />
+	
+	
+  <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?Token={auth}&query={dql_query}" />
+  <api:setc attr="XPath" value="/data" />
+  <api:set attr="DataModel" value="FlattenedDocuments" />
+  <api:set attr="PageIdColumns" value="True" />
+  <api:set attr="EnablePaging" value="False" />
+  <api:script method="GET">
+    <api:call op="apisadoExecuteJSONGet">
+      <api:push />
+    </api:call>
+  </api:script>
+</api:script>
