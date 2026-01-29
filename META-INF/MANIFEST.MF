@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Company: CData Software, Inc. - www.cdata.com
+Configuration: 25.0.9417.0
+Connectiondefaults: AuthScheme=NONE;PreferredDateFormats='UNIX;UNIXMI
+ LIS;ddd MMM dd, yyyy';EnableLooseCriteriaEvaluation=true
+Copyright: Copyright (c) 2025 CData Software, Inc. - All rights reserv
+ ed.
+Created-By: 1.8.0_332 (JET)
+Description: CData API Profile For Diffbot (beta) 2025
+Implementation-Title: CData API Profile for Diffbot (beta) 2025
+Implementation-Vendor: CData Software, Inc. - www.cdata.com
+Implementation-Version: 25.0.9417.0
+Product: CData API Profile For Diffbot (beta) 2025
+Requiredproperties: APIToken
+Sensitiveprofileprops: APIToken
+Specification-Title: CData API Profile For Diffbot (beta) 2025
+Specification-Vendor: CData Software, Inc. - www.cdata.com
+Specification-Version: 25
+Testtable: Account
+Title: CData API Profile For Diffbot (beta) 2025
+Updated: 2026-01-06
+
+Name: Account.rsd
+SHA-256-Digest: cc1ad6982a0a1e8c4e29eb33b5707d10e8f56c8c217bc197e21c2d59ce38cd6d
+
+Name: Organization.rsd
+SHA-256-Digest: 7496c846738a94f11bca15b308e1928293934a61c1e0b66254333be57fd55161
+
+Name: GenericQuery_Person.rsd
+SHA-256-Digest: 0c1cc433fa533d195ac4854385eb7359248cb711e71986c5e0a32a750b4eb603
+
+Name: sys_indexes.rsd
+SHA-256-Digest: 36e12f838fc5eb5e955bca01e50e9d942e47db632ecf1d7a8f1e443ba94c31a3
+
