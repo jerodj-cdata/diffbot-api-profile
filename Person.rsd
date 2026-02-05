@@ -1,5 +1,5 @@
 <api:script>
-  <api:info title="GenericQuery_Person" desc="Generated schema file. Accepts URL encoded query string " other:queryslicercolumn="dql_query" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="GenericQuery_Person" desc="Generated schema file. Accepts URL encoded query string " other:queryslicercolumn="dql,city_name" xmlns:other="http://apiscript.com/ns?v1">
     <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
     <attr name="entity.age" xs:type="int" readonly="False" other:xPath="/json/data/entity/age" />
     <attr name="entity.allDescriptions" xs:type="string" readonly="False" other:xPath="/json/data/entity/allDescriptions" />
@@ -156,7 +156,8 @@
     <attr name="entity_ctx.inner_hits.employments" xs:type="string" readonly="False" other:xPath="/json/data/entity_ctx/inner_hits/employments" />
     <attr name="entity_ctx.matched_clauses" xs:type="string" readonly="False" other:xPath="/json/data/entity_ctx/matched_clauses" />
     <attr name="score" xs:type="double" readonly="False" other:xPath="/json/data/score" />
-    <input name="dql_query" xs:type="String" required="True" />
+    <input name="dql" xs:type="String" required="False" />
+    <input name="city_name" xs:type="String" required="False" />
   </api:info>
   
    <!-- Setting global parameters -->
@@ -166,10 +167,18 @@
 
     <!-- Using APIKey --> 
     <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
-    <api:set attr="auth" value="[_connection.APIToken]:" />
+    <api:set attr="auth" value="[_connection.APIToken]" />
 	
-	
-  <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?Token={auth}&query={dql_query}" />
+	<api:check attr="_input.dql">
+    <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token={auth}&query={dql}" />
+    <api:else>
+      <api:setc attr="BASE" value="https://kg.diffbot.com/kg/v3/dql?token={auth}&query=type%3APerson" />
+      <api:check attr="_input.city_name">
+        <api:setc attr="URI" value="{BASE}%20location.city.name%3A%22{city_name}%22" />
+      </api:check>
+    </api:else>
+  </api:check>
+  
   <api:setc attr="XPath" value="/data" />
   <api:set attr="DataModel" value="FlattenedDocuments" />
   <api:set attr="PageIdColumns" value="True" />

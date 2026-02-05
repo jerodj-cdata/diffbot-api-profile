@@ -10,10 +10,10 @@
 
     <!-- Using APIKey --> 
     <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
-    <api:set attr="auth" value="[_connection.APIToken]:" />
+    <api:set attr="auth" value="[_connection.APIToken]" />
   
   
-  <api:setc attr="URI" value="https://api.diffbot.com/v4/account/?Token={auth}" />
+  <api:setc attr="URI" value="https://api.diffbot.com/v4/account/?token={auth}" />
   <api:setc attr="XPath" value="/data" />
   
   <api:script method="GET">
