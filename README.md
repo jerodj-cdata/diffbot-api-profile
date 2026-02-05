@@ -25,13 +25,13 @@ This API Profile allows CData tools (API Driver, Sync, API Server, etc.) to conn
 
 | Property | Required | Description |
 |----------|----------|-------------|
-| `Profile` | Yes | Path to the `.apip` profile file |
+| `Profile` | Yes | Path to the `.apip` profile file, without the `.apip` extension |
 | `APIToken` | Yes | Your Diffbot API token |
 
 ### Example Connection String
 
 ```
-Profile=/path/to/diffbot.apip;APIToken=your_token_here;
+Profile=/path/to/diffbot;ProfileSettings="APIToken=your_token_here;"
 ```
 
 ## Available Tables
@@ -117,3 +117,4 @@ The Organization and GenericQuery_Person tables use [Diffbot Query Language](htt
 ## License
 
 This profile is provided for use with licensed CData products. Diffbot API usage is subject to [Diffbot's terms of service](https://www.diffbot.com/company/terms/).
+
