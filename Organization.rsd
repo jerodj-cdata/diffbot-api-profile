@@ -212,3 +212,28 @@
     </api:call>
   </api:script>
 </api:script>
+
+<!--use the  given script below for the further filtering in Rest Driver -->
+
+<api:set attr="dqlquery" value="type:Organization" />
+
+<api:check attr="_input.city_name">
+<api:set attr="dqlquery" value="[dqlquery]%20locations.city.name:%22[_input.city_name]%22" />
+</api:check>
+
+<api:check attr="_input.num_employees">
+<api:set attr="dqlquery" value="[dqlquery]%20nbEmployees%3E[_input.num_employees]" />
+</api:check>
+
+<api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?query=[dqlquery]" />
+<api:set attr="XPath" value="/data" />
+<api:set attr="DataModel" value="FlattenedDocuments" />
+<api:set attr="PageIdColumns" value="True" />
+
+<api:set attr="EnablePaging" value="False" />
+<api:script method="GET">
+<api:set attr="method" value="GET" />
+<api:call op="jsonproviderGet">
+<api:push />
+</api:call>
+</api:script>
