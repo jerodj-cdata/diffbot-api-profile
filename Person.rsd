@@ -2,7 +2,7 @@
   <api:info 
     title="Person" 
     desc="Query for people in Diffbot Knowledge Graph" 
-    other:queryslicercolumn="dql,location_city_name,location_country_name" 
+    other:queryslicercolumn="dql,location_city_name,location_country_name,netWorth_value" 
     xmlns:other="http://apiscript.com/ns?v1"
     >
     <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
@@ -52,6 +52,7 @@
     <input name="dql" xs:type="String" required="False" />
     <input name="location_city_name" xs:type="String" required="False" />
     <input name="location_country_name" xs:type="String" required="False" />
+    <input name="netWorth_value" xs:type="Decimal" required="False" />
   </api:info>
   
   <!-- Set global parameters -->
@@ -73,6 +74,9 @@
       </api:check>
       <api:check attr="_input.location_country_name">
         <api:set attr="DQLQUERY" value="[DQLQUERY]%20location.country.name%3A%22[_input.location_country_name]%22" />
+      </api:check>
+      <api:check attr="_input.netWorth_value">
+        <api:set attr="DQLQUERY" value="[DQLQUERY]%20netWorth.value%3A%22[_input.netWorth_value]%22" />
       </api:check>
       <api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&query=[DQLQUERY]" />
     </api:else>
