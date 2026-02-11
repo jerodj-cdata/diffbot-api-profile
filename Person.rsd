@@ -170,11 +170,11 @@
     <api:set attr="auth" value="[_connection.APIToken]" />
 	
 	<api:check attr="_input.dql">
-    <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token={auth}&query={dql}" />
+    <api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&query={dql}" />
     <api:else>
-      <api:setc attr="BASE" value="https://kg.diffbot.com/kg/v3/dql?token={auth}&query=type%3APerson" />
+      <api:set attr="BASE" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&query=type%3APerson" />
       <api:check attr="_input.city_name">
-        <api:setc attr="URI" value="{BASE}%20location.city.name%3A%22{city_name}%22" />
+        <api:set attr="URI" value="[BASE]%20location.city.name%3A%22{city_name}%22" />
       </api:check>
     </api:else>
   </api:check>
