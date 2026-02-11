@@ -1,5 +1,10 @@
 <api:script>
-  <api:info title="Organization" desc="Returns a list of organizations. Can filter by city_name and num_employees" other:queryslicercolumn="city_name,num_employees" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info 
+    title="Organization" 
+    desc="Query for organizations in Diffbot Knowledge Graph" 
+    other:queryslicercolumn="city_name,num_employees"
+    xmlns:other="http://apiscript.com/ns?v1"
+    >
     <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
     <attr name="entity.abnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/abnNumbers" />
     <attr name="entity.acnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/acnNumbers" />
@@ -188,14 +193,12 @@
     <input name="num_employees" xs:type="Int" required="False" />
   </api:info>
   
-   <!-- Setting global parameters -->
+  <!-- Set global parameters -->
   <api:set attr="ContentType" value="application/json" /> 
   
-   <!-- Set authorization parameters -->
-
-    <!-- Using APIKey --> 
-    <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
-    <api:set attr="auth" value="[_connection.APIToken]" />
+  <!-- Set authorization parameters -->
+  <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
+  <api:set attr="auth" value="[_connection.APIToken]" />
   
   
   <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token={auth}&amp;query=type%3AOrganization%20locations.city.name%3A%22{city_name}%22%20nbEmployees%3E{num_employees}"/>
