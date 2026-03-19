@@ -2,4 +2,4 @@
 .claude/
 
 # Log Files
-log.txt
+log*.txt
