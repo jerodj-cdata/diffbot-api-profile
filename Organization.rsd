@@ -1,5 +1,5 @@
 <api:script>
-  <api:info title="Organization" desc="Returns a list of organizations. Can filter by city_name and num_employees" other:queryslicercolumn="city_name,num_employees" xmlns:other="http://apiscript.com/ns?v1">
+  <api:info title="Organization" desc="Returns a list of organizations. Can filter by city_name, num_employees, name, and capitalization" other:queryslicercolumn="city_name,num_employees,name" xmlns:other="http://apiscript.com/ns?v1">
     <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
     <attr name="entity.abnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/abnNumbers" />
     <attr name="entity.acnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/acnNumbers" />
@@ -13,7 +13,7 @@
     <attr name="entity.boardMembers" xs:type="string" readonly="False" other:xPath="/json/data/entity/boardMembers" />
     <attr name="entity.canadianBusinessNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/canadianBusinessNumbers" />
     <attr name="entity.capitalization.currency" xs:type="string" readonly="False" other:xPath="/json/data/entity/capitalization/currency" />
-    <attr name="entity.capitalization.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/capitalization/value" />
+    <attr name="entity.capitalization.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/capitalization/value" other:filter="cap_value_gt:>,cap_value_lt:<,cap_value_gte:>=,cap_value_lte:<=" />
     <attr name="entity.categories" xs:type="string" readonly="False" other:xPath="/json/data/entity/categories" />
     <attr name="entity.ceo.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/ceo/diffbotUri" />
     <attr name="entity.ceo.image" xs:type="string" readonly="False" other:xPath="/json/data/entity/ceo/image" />
@@ -37,7 +37,9 @@
     <attr name="entity.founders" xs:type="string" readonly="False" other:xPath="/json/data/entity/founders" />
     <attr name="entity.foundingDate.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/foundingDate/precision" />
     <attr name="entity.foundingDate.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/foundingDate/str" />
+    <!-- foundingDate.timestamp is milliseconds from Diffbot; divide by 1000 to get epoch seconds for datetime conversion -->
     <attr name="entity.foundingDate.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/foundingDate/timestamp" />
+    <attr name="entity.foundingDate.datetime" xs:type="datetime" readonly="True" other:xPath="/json/data/entity/foundingDate/timestamp" other:xPathFormat="[value|Math.Divide(1000)]" />
     <attr name="entity.fullName" xs:type="string" readonly="False" other:xPath="/json/data/entity/fullName" />
     <attr name="entity.githubUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/githubUri" />
     <attr name="entity.googlePlusUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/googlePlusUri" />
@@ -116,7 +118,8 @@
     <attr name="entity.nafClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/nafClassification" />
     <attr name="entity.naicsClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/naicsClassification" />
     <attr name="entity.naicsClassification2017" xs:type="string" readonly="False" other:xPath="/json/data/entity/naicsClassification2017" />
-    <attr name="entity.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/name" />
+    <!-- LIKE and = both map to the same DQL name: filter (Diffbot name matching is inherently fuzzy) -->
+    <attr name="entity.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/name" other:filter="name:=,LIKE" />
     <attr name="entity.nbActiveEmployeeEdges" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbActiveEmployeeEdges" />
     <attr name="entity.nbEmployees" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbEmployees" other:filter="num_employees:=" />
     <attr name="entity.nbEmployeesMax" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbEmployeesMax" />
@@ -186,29 +189,62 @@
     <attr name="score" xs:type="double" readonly="False" other:xPath="/json/data/score" />
     <input name="city_name" xs:type="string" required="False" />
     <input name="num_employees" xs:type="Int" required="False" />
+    <!-- name: supports = and LIKE; % wildcards are stripped since DQL name: is inherently fuzzy -->
+    <input name="name" xs:type="string" required="False" />
+    <!-- capitalization.value operator inputs: use the one matching your SQL operator -->
+    <input name="cap_value_gt" xs:type="decimal" required="False" />
+    <input name="cap_value_lt" xs:type="decimal" required="False" />
+    <input name="cap_value_gte" xs:type="decimal" required="False" />
+    <input name="cap_value_lte" xs:type="decimal" required="False" />
   </api:info>
   
-   <!-- Setting global parameters -->
+  <!-- Setting global parameters -->
   <api:set attr="ContentType" value="application/json" /> 
   
-   <!-- Set authorization parameters -->
+  <!-- Set authorization parameters -->
 
-    <!-- Using APIKey --> 
-    <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
-    <api:set attr="auth" value="[_connection.APIToken]:" />
+  <!-- Using APIKey --> 
+  <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
+  <api:set attr="auth" value="[_connection.APIToken]" />
   
-  
-  <api:setc attr="URI" value="https://kg.diffbot.com/kg/v3/dql?query=type%3AOrganization%20locations.city.name%3A%22{city_name}%22%20nbEmployees%3E{num_employees}"/>
-  <api:setc attr="XPath" value="/data" />
+  <!-- Build the DQL query dynamically -->
+  <api:set attr="dqlquery" value="type:Organization" />
+
+  <api:check attr="_input.city_name">
+    <api:set attr="dqlquery" value="[dqlquery] locations.city.name:&quot;[_input.city_name]&quot;" />
+  </api:check>
+
+  <api:check attr="_input.num_employees">
+    <api:set attr="dqlquery" value="[dqlquery] nbEmployees&gt;[_input.num_employees]" />
+  </api:check>
+
+  <!-- name filter: strip SQL LIKE wildcards (%) since DQL name: is inherently fuzzy for both = and LIKE -->
+  <api:check attr="_input.name">
+    <api:set attr="dqlquery" value="[dqlquery] name:&quot;[_input.name|Replace('%','')]&quot;" />
+  </api:check>
+
+  <!-- capitalization.value operator passthrough to DQL -->
+  <api:check attr="_input.cap_value_gt">
+    <api:set attr="dqlquery" value="[dqlquery] capitalization.value&gt;[_input.cap_value_gt]" />
+  </api:check>
+  <api:check attr="_input.cap_value_lt">
+    <api:set attr="dqlquery" value="[dqlquery] capitalization.value&lt;[_input.cap_value_lt]" />
+  </api:check>
+  <api:check attr="_input.cap_value_gte">
+    <api:set attr="dqlquery" value="[dqlquery] capitalization.value&gt;=[_input.cap_value_gte]" />
+  </api:check>
+  <api:check attr="_input.cap_value_lte">
+    <api:set attr="dqlquery" value="[dqlquery] capitalization.value&lt;=[_input.cap_value_lte]" />
+  </api:check>
+
+  <api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&amp;query=[dqlquery]" />
+  <api:set attr="XPath" value="/data" />
   <api:set attr="DataModel" value="FlattenedDocuments" />
   <api:set attr="PageIdColumns" value="True" />
   
-    <api:setc attr="ParamName#1" value="Token" />
-    <api:setc attr="ParamValue#1" value="93e997a4219c3b07a192c0d9599a7a26"/>
-  
   <api:set attr="EnablePaging" value="False" />
   <api:script method="GET">
-	<api:set attr="method" value="GET" />
+    <api:set attr="method" value="GET" />
     <api:call op="apisadoExecuteJSONGet">
       <api:push />
     </api:call>
