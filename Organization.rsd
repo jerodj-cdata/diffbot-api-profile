@@ -39,7 +39,7 @@
     <attr name="entity.foundingDate.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/foundingDate/str" />
     <!-- foundingDate.timestamp is milliseconds from Diffbot; divide by 1000 to get epoch seconds for datetime conversion -->
     <attr name="entity.foundingDate.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/foundingDate/timestamp" />
-    <attr name="entity.foundingDate.datetime" xs:type="datetime" readonly="True" other:xPath="/json/data/entity/foundingDate/timestamp" other:xPathFormat="[value|Math.Divide(1000)]" />
+    <attr name="entity.foundingDate.datetime" xs:type="string" readonly="True" other:xPath="/json/data/entity/foundingDate/str" other:xPathFormat="[value|Substring(1)]" />
     <attr name="entity.fullName" xs:type="string" readonly="False" other:xPath="/json/data/entity/fullName" />
     <attr name="entity.githubUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/githubUri" />
     <attr name="entity.googlePlusUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/googlePlusUri" />
