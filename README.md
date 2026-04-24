@@ -71,7 +71,7 @@ Query people in the Diffbot Knowledge Graph. To filter the data, supply a DQL st
 ```sql
 -- List everyone who has ever been a founder
 SELECT * FROM Person
-WHERE dql_query = 'type:Person employments.title:"Founder"'
+WHERE dql = 'type:Person employments.title:"Founder"'
 ```
 
 DQL is a highly flexible querying language. Brace yourself. 
@@ -79,7 +79,7 @@ DQL is a highly flexible querying language. Brace yourself.
 ```sql
 -- List AI founders who previously worked at FAANG companies
 SELECT * FROM Person
-WHERE dql_query = 'type:Person employments.{title:"Founder" employer.categories.name:"Artificial Intelligence Software" isCurrent:true} employments.{employer.name:or("Facebook", "Amazon", "Apple", "Netflix", "Google") isCurrent:false}'
+WHERE dql = 'type:Person employments.{title:"Founder" employer.categories.name:"Artificial Intelligence Software" isCurrent:true} employments.{employer.name:or("Facebook", "Amazon", "Apple", "Netflix", "Google") isCurrent:false}'
 ```
 
 **Key Fields:**
