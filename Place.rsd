@@ -5,70 +5,70 @@
     other:queryslicercolumn="dql"
     xmlns:other="http://apiscript.com/ns?v1"
     >
-    <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
+    <attr name="data:_id" xs:type="string" readonly="True" other:xPath="/json/data/_id" />
 
     <!-- General -->
-    <attr name="name" xs:type="string" readonly="False" other:xPath="/json/data/entity/name" />
-    <attr name="summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/summary" />
-    <attr name="description" xs:type="string" readonly="False" other:xPath="/json/data/entity/description" />
-    <attr name="descriptors" xs:type="string" readonly="False" other:xPath="/json/data/entity/descriptors" />
-    <attr name="allNames" xs:type="string" readonly="False" other:xPath="/json/data/entity/allNames" />
-    <attr name="allDescriptions" xs:type="string" readonly="False" other:xPath="/json/data/entity/allDescriptions" />
-    <attr name="placeType" xs:type="string" readonly="False" other:xPath="/json/data/entity/placeType" />
-    <attr name="population" xs:type="int" readonly="False" other:xPath="/json/data/entity/population" />
-    <attr name="area" xs:type="int" readonly="False" other:xPath="/json/data/entity/area" />
-    <attr name="areaCodes" xs:type="string" readonly="False" other:xPath="/json/data/entity/areaCodes" />
-    <attr name="postalCodes" xs:type="string" readonly="False" other:xPath="/json/data/entity/postalCodes" />
-    <attr name="image" xs:type="string" readonly="False" other:xPath="/json/data/entity/image" />
-    <attr name="images" xs:type="string" readonly="False" other:xPath="/json/data/entity/images" />
-    <attr name="importance" xs:type="double" readonly="False" other:xPath="/json/data/entity/importance" />
+    <attr name="name" xs:type="string" readonly="True" other:xPath="/json/data/entity/name" />
+    <attr name="summary" xs:type="string" readonly="True" other:xPath="/json/data/entity/summary" />
+    <attr name="description" xs:type="string" readonly="True" other:xPath="/json/data/entity/description" />
+    <attr name="descriptors" xs:type="string" readonly="True" other:xPath="/json/data/entity/descriptors" />
+    <attr name="allNames" xs:type="string" readonly="True" other:xPath="/json/data/entity/allNames" />
+    <attr name="allDescriptions" xs:type="string" readonly="True" other:xPath="/json/data/entity/allDescriptions" />
+    <attr name="placeType" xs:type="string" readonly="True" other:xPath="/json/data/entity/placeType" />
+    <attr name="population" xs:type="int" readonly="True" other:xPath="/json/data/entity/population" />
+    <attr name="area" xs:type="int" readonly="True" other:xPath="/json/data/entity/area" />
+    <attr name="areaCodes" xs:type="string" readonly="True" other:xPath="/json/data/entity/areaCodes" />
+    <attr name="postalCodes" xs:type="string" readonly="True" other:xPath="/json/data/entity/postalCodes" />
+    <attr name="image" xs:type="string" readonly="True" other:xPath="/json/data/entity/image" />
+    <attr name="images" xs:type="string" readonly="True" other:xPath="/json/data/entity/images" />
+    <attr name="importance" xs:type="double" readonly="True" other:xPath="/json/data/entity/importance" />
 
     <!-- Location -->
-    <attr name="location.address" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/address" />
-    <attr name="location.surfaceForm" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/surfaceForm" />
-    <attr name="location.latitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/latitude" />
-    <attr name="location.longitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/longitude" />
-    <attr name="location.precision" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/precision" />
-    <attr name="location.country.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/name" />
-    <attr name="location.country.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/diffbotUri" />
+    <attr name="location.address" xs:type="string" readonly="True" other:xPath="/json/data/entity/location/address" />
+    <attr name="location.surfaceForm" xs:type="string" readonly="True" other:xPath="/json/data/entity/location/surfaceForm" />
+    <attr name="location.latitude" xs:type="double" readonly="True" other:xPath="/json/data/entity/location/latitude" />
+    <attr name="location.longitude" xs:type="double" readonly="True" other:xPath="/json/data/entity/location/longitude" />
+    <attr name="location.precision" xs:type="double" readonly="True" other:xPath="/json/data/entity/location/precision" />
+    <attr name="location.country.name" xs:type="string" readonly="True" other:xPath="/json/data/entity/location/country/name" />
+    <attr name="location.country.diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/location/country/diffbotUri" />
 
     <!-- Hierarchy -->
-    <attr name="isPartOf.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/isPartOf/name" />
-    <attr name="isPartOf.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/isPartOf/summary" />
-    <attr name="isPartOf.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/isPartOf/diffbotUri" />
-    <attr name="isPartOf.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/isPartOf/types" />
+    <attr name="isPartOf.name" xs:type="string" readonly="True" other:xPath="/json/data/entity/isPartOf/name" />
+    <attr name="isPartOf.summary" xs:type="string" readonly="True" other:xPath="/json/data/entity/isPartOf/summary" />
+    <attr name="isPartOf.diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/isPartOf/diffbotUri" />
+    <attr name="isPartOf.types" xs:type="string" readonly="True" other:xPath="/json/data/entity/isPartOf/types" />
 
     <!-- Head of Place -->
-    <attr name="headOfPlace.title" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/title" />
-    <attr name="headOfPlace.category" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/category" />
-    <attr name="headOfPlace.isCurrent" xs:type="bool" readonly="False" other:xPath="/json/data/entity/headOfPlace/isCurrent" />
-    <attr name="headOfPlace.headOfPlace.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/headOfPlace/name" />
-    <attr name="headOfPlace.headOfPlace.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/headOfPlace/summary" />
-    <attr name="headOfPlace.headOfPlace.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/headOfPlace/diffbotUri" />
-    <attr name="headOfPlace.headOfPlace.types" xs:type="string" readonly="False" other:xPath="/json/data/entity/headOfPlace/headOfPlace/types" />
+    <attr name="headOfPlace.title" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/title" />
+    <attr name="headOfPlace.category" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/category" />
+    <attr name="headOfPlace.isCurrent" xs:type="bool" readonly="True" other:xPath="/json/data/entity/headOfPlace/isCurrent" />
+    <attr name="headOfPlace.headOfPlace.name" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/name" />
+    <attr name="headOfPlace.headOfPlace.summary" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/summary" />
+    <attr name="headOfPlace.headOfPlace.diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/diffbotUri" />
+    <attr name="headOfPlace.headOfPlace.types" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/types" />
     <attr name="headOfPlace.from.str" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/str" />
-    <attr name="headOfPlace.from.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/headOfPlace/from/precision" />
-    <attr name="headOfPlace.from.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/headOfPlace/from/timestamp" />
+    <attr name="headOfPlace.from.precision" xs:type="int" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/precision" />
+    <attr name="headOfPlace.from.timestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/timestamp" />
     <attr name="headOfPlace.to.str" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/str" />
-    <attr name="headOfPlace.to.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/headOfPlace/to/precision" />
-    <attr name="headOfPlace.to.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/headOfPlace/to/timestamp" />
+    <attr name="headOfPlace.to.precision" xs:type="int" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/precision" />
+    <attr name="headOfPlace.to.timestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/timestamp" />
 
     <!-- URIs -->
-    <attr name="allUris" xs:type="string" readonly="False" other:xPath="/json/data/entity/allUris" />
-    <attr name="allUriDetails" xs:type="string" readonly="False" other:xPath="/json/data/entity/allUriDetails" />
+    <attr name="allUris" xs:type="string" readonly="True" other:xPath="/json/data/entity/allUris" />
+    <attr name="allUriDetails" xs:type="string" readonly="True" other:xPath="/json/data/entity/allUriDetails" />
 
     <!-- Metadata -->
-    <attr name="id" xs:type="string" readonly="False" other:xPath="/json/data/entity/id" />
-    <attr name="diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/diffbotUri" />
-    <attr name="type" xs:type="string" readonly="False" other:xPath="/json/data/entity/type" />
-    <attr name="types" xs:type="string" readonly="False" other:xPath="/json/data/entity/types" />
-    <attr name="nbOrigins" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbOrigins" />
-    <attr name="nbIncomingEdges" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbIncomingEdges" />
-    <attr name="origins" xs:type="string" readonly="False" other:xPath="/json/data/entity/origins" />
-    <attr name="allOriginHashes" xs:type="string" readonly="False" other:xPath="/json/data/entity/allOriginHashes" />
-    <attr name="originDetails" xs:type="string" readonly="False" other:xPath="/json/data/entity/originDetails" />
-    <attr name="nonCanonicalFacts" xs:type="string" readonly="False" other:xPath="/json/data/entity/nonCanonicalFacts" />
-    <attr name="crawlTimestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/crawlTimestamp" />
+    <attr name="id" xs:type="string" readonly="True" other:xPath="/json/data/entity/id" />
+    <attr name="diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/diffbotUri" />
+    <attr name="type" xs:type="string" readonly="True" other:xPath="/json/data/entity/type" />
+    <attr name="types" xs:type="string" readonly="True" other:xPath="/json/data/entity/types" />
+    <attr name="nbOrigins" xs:type="int" readonly="True" other:xPath="/json/data/entity/nbOrigins" />
+    <attr name="nbIncomingEdges" xs:type="int" readonly="True" other:xPath="/json/data/entity/nbIncomingEdges" />
+    <attr name="origins" xs:type="string" readonly="True" other:xPath="/json/data/entity/origins" />
+    <attr name="allOriginHashes" xs:type="string" readonly="True" other:xPath="/json/data/entity/allOriginHashes" />
+    <attr name="originDetails" xs:type="string" readonly="True" other:xPath="/json/data/entity/originDetails" />
+    <attr name="nonCanonicalFacts" xs:type="string" readonly="True" other:xPath="/json/data/entity/nonCanonicalFacts" />
+    <attr name="crawlTimestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/crawlTimestamp" />
 
     <!-- Input parameters-->
     <input name="dql" xs:type="String" required="False" />

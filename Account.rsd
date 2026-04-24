@@ -1,23 +1,41 @@
 <api:script>
-  <api:info title="Account" desc="Returns information about Diffbot account"  xmlns:other="http://apiscript.com/ns?v1">
-    <attr name="data" xs:type="string" readonly="True" other:xPath="/json/data" />
+  <api:info 
+    title="Account" 
+    desc="Returns status and other metadata on a Diffbot token"  
+    xmlns:other="http://apiscript.com/ns?v1">
+
+    <!-- Account -->
+    <attr name="name" xs:type="string" readonly="True" other:xPath="/json/name" />
+    <attr name="email" xs:type="string" readonly="True" other:xPath="/json/email" />
+    <attr name="plan" xs:type="string" readonly="True" other:xPath="/json/plan" />
+    <attr name="status" xs:type="string" readonly="True" other:xPath="/json/status" />
+    <attr name="created" xs:type="string" readonly="True" other:xPath="/json/created" />
+
+    <!-- Tokens -->
+    <attr name="token" xs:type="string" readonly="True" other:xPath="/json/token" />
+    <attr name="childTokens" xs:type="string" readonly="True" other:xPath="/json/childTokens" />
+
+    <!-- Usage -->
+    <attr name="usage" xs:type="string" readonly="True" other:xPath="/json/usage" />
+
   </api:info>
   
    <!-- Setting global parameters -->
   <api:set attr="ContentType" value="application/json" /> 
   
    <!-- Set authorization parameters -->
+  <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
+  <api:set attr="auth" value="[_connection.APIToken]" />
+  
+  <api:set attr="URI" value="https://api.diffbot.com/v4/account?token=[auth]" />
 
-    <!-- Using APIKey --> 
-    <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
-    <api:set attr="auth" value="[_connection.APIToken]" />
-  
-  
-  <api:setc attr="URI" value="https://api.diffbot.com/v4/account/?token={auth}" />
-  <api:setc attr="XPath" value="/data" />
-  
+  <api:set attr="XPath" value="/json" />
+  <api:set attr="DataModel" value="FlattenedDocuments" />
+  <api:set attr="PageIdColumns" value="True" />
+  <api:set attr="EnablePaging" value="False" />
   <api:script method="GET">
-    <api:call op="jsonproviderGet">
+	<api:set attr="method" value="GET" />
+    <api:call op="apisadoExecuteJSONGet">
       <api:push />
     </api:call>
   </api:script>

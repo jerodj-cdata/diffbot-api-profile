@@ -5,65 +5,65 @@
     other:queryslicercolumn="dql"
     xmlns:other="http://apiscript.com/ns?v1"
     >
-    <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
+    <attr name="data:_id" xs:type="string" readonly="True" other:xPath="/json/data/_id" />
 
     <!-- General -->
-    <attr name="title" xs:type="string" readonly="False" other:xPath="/json/data/entity/title" />
-    <attr name="text" xs:type="string" readonly="False" other:xPath="/json/data/entity/text" />
-    <attr name="html" xs:type="string" readonly="False" other:xPath="/json/data/entity/html" />
-    <attr name="language" xs:type="string" readonly="False" other:xPath="/json/data/entity/language" />
-    <attr name="numPages" xs:type="int" readonly="False" other:xPath="/json/data/entity/numPages" />
-    <attr name="pageUrl" xs:type="string" readonly="False" other:xPath="/json/data/entity/pageUrl" />
+    <attr name="title" xs:type="string" readonly="True" other:xPath="/json/data/entity/title" />
+    <attr name="text" xs:type="string" readonly="True" other:xPath="/json/data/entity/text" />
+    <attr name="html" xs:type="string" readonly="True" other:xPath="/json/data/entity/html" />
+    <attr name="language" xs:type="string" readonly="True" other:xPath="/json/data/entity/language" />
+    <attr name="numPages" xs:type="int" readonly="True" other:xPath="/json/data/entity/numPages" />
+    <attr name="pageUrl" xs:type="string" readonly="True" other:xPath="/json/data/entity/pageUrl" />
 
     <!-- Dates -->
     <attr name="date.str" xs:type="string" readonly="True" other:xPath="/json/data/entity/date/str" />
-    <attr name="date.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/date/precision" />
-    <attr name="date.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/date/timestamp" />
+    <attr name="date.precision" xs:type="int" readonly="True" other:xPath="/json/data/entity/date/precision" />
+    <attr name="date.timestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/date/timestamp" />
 
     <!-- Publication -->
-    <attr name="siteName" xs:type="string" readonly="False" other:xPath="/json/data/entity/siteName" />
-    <attr name="publisherCountry" xs:type="string" readonly="False" other:xPath="/json/data/entity/publisherCountry" />
-    <attr name="publisherRegion" xs:type="string" readonly="False" other:xPath="/json/data/entity/publisherRegion" />
-    <attr name="icon" xs:type="string" readonly="False" other:xPath="/json/data/entity/icon" />
+    <attr name="siteName" xs:type="string" readonly="True" other:xPath="/json/data/entity/siteName" />
+    <attr name="publisherCountry" xs:type="string" readonly="True" other:xPath="/json/data/entity/publisherCountry" />
+    <attr name="publisherRegion" xs:type="string" readonly="True" other:xPath="/json/data/entity/publisherRegion" />
+    <attr name="icon" xs:type="string" readonly="True" other:xPath="/json/data/entity/icon" />
 
     <!-- Authorship -->
-    <attr name="author" xs:type="string" readonly="False" other:xPath="/json/data/entity/author" />
-    <attr name="authorUrl" xs:type="string" readonly="False" other:xPath="/json/data/entity/authorUrl" />
+    <attr name="author" xs:type="string" readonly="True" other:xPath="/json/data/entity/author" />
+    <attr name="authorUrl" xs:type="string" readonly="True" other:xPath="/json/data/entity/authorUrl" />
 
     <!-- Navigation/Structure -->
-    <attr name="breadcrumb" xs:type="string" readonly="False" other:xPath="/json/data/entity/breadcrumb" />
-    <attr name="nextPage" xs:type="string" readonly="False" other:xPath="/json/data/entity/nextPage" />
-    <attr name="nextPages" xs:type="string" readonly="False" other:xPath="/json/data/entity/nextPages" />
+    <attr name="breadcrumb" xs:type="string" readonly="True" other:xPath="/json/data/entity/breadcrumb" />
+    <attr name="nextPage" xs:type="string" readonly="True" other:xPath="/json/data/entity/nextPage" />
+    <attr name="nextPages" xs:type="string" readonly="True" other:xPath="/json/data/entity/nextPages" />
 
     <!-- Media -->
-    <attr name="images" xs:type="string" readonly="False" other:xPath="/json/data/entity/images" />
-    <attr name="videos" xs:type="string" readonly="False" other:xPath="/json/data/entity/videos" />
+    <attr name="images" xs:type="string" readonly="True" other:xPath="/json/data/entity/images" />
+    <attr name="videos" xs:type="string" readonly="True" other:xPath="/json/data/entity/videos" />
 
     <!-- Insights -->
-    <attr name="tags" xs:type="string" readonly="False" other:xPath="/json/data/entity/tags" />
-    <attr name="quotes" xs:type="string" readonly="False" other:xPath="/json/data/entity/quotes" />
-    <attr name="sentiment" xs:type="double" readonly="False" other:xPath="/json/data/entity/sentiment" />
-    <attr name="categories" xs:type="string" readonly="False" other:xPath="/json/data/entity/categories" />
+    <attr name="tags" xs:type="string" readonly="True" other:xPath="/json/data/entity/tags/label" />
+    <attr name="quotes" xs:type="string" readonly="True" other:xPath="/json/data/entity/quotes" />
+    <attr name="sentiment" xs:type="double" readonly="True" other:xPath="/json/data/entity/sentiment" />
+    <attr name="categories" xs:type="string" readonly="True" other:xPath="/json/data/entity/categories/name" />
 
     <!-- Discussion -->
-    <attr name="discussion.title" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/title" />
-    <attr name="discussion.provider" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/provider" />
-    <attr name="discussion.language" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/language" />
-    <attr name="discussion.numPosts" xs:type="int" readonly="False" other:xPath="/json/data/entity/discussion/numPosts" />
-    <attr name="discussion.numParticipants" xs:type="int" readonly="False" other:xPath="/json/data/entity/discussion/numParticipants" />
-    <attr name="discussion.numPages" xs:type="int" readonly="False" other:xPath="/json/data/entity/discussion/numPages" />
-    <attr name="discussion.nextPage" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/nextPage" />
-    <attr name="discussion.nextPages" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/nextPages" />
-    <attr name="discussion.rssUrl" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/rssUrl" />
-    <attr name="discussion.posts" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/posts" />
-    <attr name="discussion.tags" xs:type="string" readonly="False" other:xPath="/json/data/entity/discussion/tags" />
+    <attr name="discussion.title" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/title" />
+    <attr name="discussion.provider" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/provider" />
+    <attr name="discussion.language" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/language" />
+    <attr name="discussion.numPosts" xs:type="int" readonly="True" other:xPath="/json/data/entity/discussion/numPosts" />
+    <attr name="discussion.numParticipants" xs:type="int" readonly="True" other:xPath="/json/data/entity/discussion/numParticipants" />
+    <attr name="discussion.numPages" xs:type="int" readonly="True" other:xPath="/json/data/entity/discussion/numPages" />
+    <attr name="discussion.nextPage" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/nextPage" />
+    <attr name="discussion.nextPages" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/nextPages" />
+    <attr name="discussion.rssUrl" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/rssUrl" />
+    <attr name="discussion.posts" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/posts" />
+    <attr name="discussion.tags" xs:type="string" readonly="True" other:xPath="/json/data/entity/discussion/tags" />
 
     <!-- Metadata -->
-    <attr name="id" xs:type="string" readonly="False" other:xPath="/json/data/entity/id" />
-    <attr name="diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/diffbotUri" />
-    <attr name="type" xs:type="string" readonly="False" other:xPath="/json/data/entity/type" />
-    <attr name="types" xs:type="string" readonly="False" other:xPath="/json/data/entity/types" />
-    <attr name="crawlTimestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/crawlTimestamp" />
+    <attr name="id" xs:type="string" readonly="True" other:xPath="/json/data/entity/id" />
+    <attr name="diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/diffbotUri" />
+    <attr name="type" xs:type="string" readonly="True" other:xPath="/json/data/entity/type" />
+    <attr name="types" xs:type="string" readonly="True" other:xPath="/json/data/entity/types" />
+    <attr name="crawlTimestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/crawlTimestamp" />
 
     <!-- Input parameters-->
     <input name="dql" xs:type="String" required="False" />
