@@ -137,7 +137,7 @@
     <attr name="origins" xs:type="string" readonly="True" other:xPath="/json/data/entity/origins" />
     
     <!-- Input parameters-->
-    <input name="dql" xs:type="String" required="False" />
+    <input name="dql" xs:type="String" required="True" />
   </api:info>
   
   <!-- Set global parameters -->

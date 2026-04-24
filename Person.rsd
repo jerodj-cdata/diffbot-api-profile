@@ -49,6 +49,9 @@
     <attr name="wikipediaPageviews" xs:type="int" readonly="True" other:xPath="/json/data/entity/wikipediaPageviews" />
     <attr name="wikipediaUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/wikipediaUri" />
     <attr name="youtubeUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/youtubeUri" />
+
+    <!-- Input parameters-->
+    <input name="dql" xs:type="String" required="True" />
   </api:info>
   
   <!-- Set global parameters -->

@@ -40,18 +40,7 @@
 
     <!-- Head of Place -->
     <attr name="headOfPlace.title" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/title" />
-    <attr name="headOfPlace.category" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/category" />
-    <attr name="headOfPlace.isCurrent" xs:type="bool" readonly="True" other:xPath="/json/data/entity/headOfPlace/isCurrent" />
     <attr name="headOfPlace.headOfPlace.name" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/name" />
-    <attr name="headOfPlace.headOfPlace.summary" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/summary" />
-    <attr name="headOfPlace.headOfPlace.diffbotUri" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/diffbotUri" />
-    <attr name="headOfPlace.headOfPlace.types" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/headOfPlace/types" />
-    <attr name="headOfPlace.from.str" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/str" />
-    <attr name="headOfPlace.from.precision" xs:type="int" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/precision" />
-    <attr name="headOfPlace.from.timestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/headOfPlace/from/timestamp" />
-    <attr name="headOfPlace.to.str" xs:type="string" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/str" />
-    <attr name="headOfPlace.to.precision" xs:type="int" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/precision" />
-    <attr name="headOfPlace.to.timestamp" xs:type="long" readonly="True" other:xPath="/json/data/entity/headOfPlace/to/timestamp" />
 
     <!-- URIs -->
     <attr name="allUris" xs:type="string" readonly="True" other:xPath="/json/data/entity/allUris" />
