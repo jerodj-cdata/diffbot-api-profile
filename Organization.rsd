@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
  <api:script>
   <api:info title="Organization" desc="Returns a list of organizations. Filter by actual column names: [entity.location.city.name], [entity.name]. For employee count use pseudo-input: num_employees (e.g. WHERE num_employees = 5000). For capitalization range: cap_value_gt, cap_value_lt, cap_value_gte, cap_value_lte." other:queryslicercolumn="entity.location.city.name,entity.name" xmlns:other="http://apiscript.com/ns?v1">
     <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
@@ -199,17 +200,158 @@
     <input name="cap_value_lt" xs:type="decimal" required="False" />
     <input name="cap_value_gte" xs:type="decimal" required="False" />
     <input name="cap_value_lte" xs:type="decimal" required="False" />
+=======
+<api:script>
+  <api:info 
+    title="Organization" 
+    desc="Query for organizations in Diffbot Knowledge Graph with DQL" 
+    other:queryslicercolumn="dql" 
+    xmlns:other="http://apiscript.com/ns?v1"
+    >
+    <attr name="data:_id" xs:type="string" readonly="False" other:xPath="/json/data/_id" />
+
+    <!-- General -->
+    <attr name="name" xs:type="string" readonly="False" other:xPath="/json/data/entity/name" />
+    <attr name="homepageUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/homepageUri" />
+    <attr name="summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/summary" />
+    <attr name="description" xs:type="string" readonly="False" other:xPath="/json/data/entity/description" />
+    <attr name="categories" xs:type="string" readonly="False" other:xPath="/json/data/entity/categories" />
+    <attr name="descriptors" xs:type="string" readonly="False" other:xPath="/json/data/entity/descriptors" />
+    <attr name="logo" xs:type="string" readonly="False" other:xPath="/json/data/entity/logo" />
+    <attr name="isAcquired" xs:type="bool" readonly="False" other:xPath="/json/data/entity/isAcquired" />
+    <attr name="isDissolved" xs:type="bool" readonly="False" other:xPath="/json/data/entity/isDissolved" />
+    <attr name="isNonProfit" xs:type="bool" readonly="False" other:xPath="/json/data/entity/isNonProfit" />
+    <attr name="isPublic" xs:type="bool" readonly="False" other:xPath="/json/data/entity/isPublic" />
+    <attr name="legalEntities" xs:type="string" readonly="False" other:xPath="/json/data/entity/legalEntities" />
+    <attr name="allNames" xs:type="string" readonly="False" other:xPath="/json/data/entity/allNames" />
+    <attr name="nbEmployees" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbEmployees" />
+    <attr name="nbEmployeesMax" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbEmployeesMax" />
+    <attr name="nbEmployeesMin" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbEmployeesMin" />
+    <attr name="foundingDate.str" xs:type="str" readonly="True" other:xPath="/json/data/entity/foundingDate/str" />
+
+    <!-- Location(s) -->
+    <attr name="nbLocations" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbLocations" />
+    <attr name="location.address" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/address" />
+    <attr name="location.street" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/street" />
+    <attr name="location.city.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/city/name" />
+    <attr name="location.metroArea.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/metroArea/name" />
+    <attr name="location.region.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/region/name" />
+    <attr name="location.subregion.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/subregion/name" />
+    <attr name="location.country.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/country/name" />
+    <attr name="location.postalCode" xs:type="string" readonly="False" other:xPath="/json/data/entity/location/postalCode" />
+    <attr name="location.latitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/latitude" />
+    <attr name="location.longitude" xs:type="double" readonly="False" other:xPath="/json/data/entity/location/longitude" />
+    <attr name="locations" xs:type="string" readonly="False" other:xPath="/json/data/entity/locations" />
+
+    <!-- Registration IDs -->
+    <attr name="abnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/abnNumbers" />
+    <attr name="acnNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/acnNumbers" />
+    <attr name="companiesHouseIds" xs:type="string" readonly="False" other:xPath="/json/data/entity/companiesHouseIds" />
+    <attr name="canadianBusinessNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/canadianBusinessNumbers" />
+    <attr name="indianCorporateIdentityNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/indianCorporateIdentityNumbers" />
+    <attr name="irsEmployerIdentificationNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/irsEmployerIdentificationNumbers" />
+    <attr name="israeliCompanyNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/israeliCompanyNumbers" />
+    <attr name="japaneseCorporateNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/japaneseCorporateNumbers" />
+    <attr name="norwegianOrganizationNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/norwegianOrganizationNumbers" />
+    <attr name="npiNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/npiNumbers" />
+    <attr name="secCentralIndexKeys" xs:type="string" readonly="False" other:xPath="/json/data/entity/secCentralIndexKeys" />
+    <attr name="sirenCodes" xs:type="string" readonly="False" other:xPath="/json/data/entity/sirenCodes" />
+    <attr name="vatIdentificationNumbers" xs:type="string" readonly="False" other:xPath="/json/data/entity/vatIdentificationNumbers" />
+    
+    <!-- Industry Classification -->
+    <attr name="anzSicClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/anzSicClassification" />
+    <attr name="iSicClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/iSicClassification" />
+    <attr name="naceClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/naceClassification" />
+    <attr name="nafClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/nafClassification" />
+    <attr name="naicsClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/naicsClassification" />
+    <attr name="sicClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/sicClassification" />
+    <attr name="ssbClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/ssbClassification" />
+    <attr name="ukSicClassification" xs:type="string" readonly="False" other:xPath="/json/data/entity/ukSicClassification" />
+
+    <!-- Social/Directory -->
+    <attr name="linkedInUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/linkedInUri" />
+    <attr name="angellistUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/angellistUri" />
+    <attr name="crunchbaseUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/crunchbaseUri" />
+    <attr name="facebookUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/facebookUri" />
+    <attr name="githubUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/githubUri" />
+    <attr name="googlePlusUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/googlePlusUri" />
+    <attr name="twitterUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/twitterUri" />
+    <attr name="wikipediaUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/wikipediaUri" />    
+    
+    <!-- People -->
+    <attr name="founders" xs:type="string" readonly="False" other:xPath="/json/data/entity/founders" />
+    <attr name="boardMembers" xs:type="string" readonly="False" other:xPath="/json/data/entity/boardMembers" />
+    <attr name="ceo.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/ceo/name" />
+    <attr name="ceo.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/ceo/diffbotUri" />
+    
+    <!-- Business/Financial -->
+    <attr name="nbUniqueInvestors" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbUniqueInvestors" />
+    <attr name="acquiredBy" xs:type="string" readonly="False" other:xPath="/json/data/entity/acquiredBy" />
+    <attr name="capitalization.currency" xs:type="string" readonly="False" other:xPath="/json/data/entity/capitalization/currency" />
+    <attr name="capitalization.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/capitalization/value" />
+    <attr name="employeeCategories" xs:type="string" readonly="False" other:xPath="/json/data/entity/employeeCategories" />
+    <attr name="competitors" xs:type="string" readonly="False" other:xPath="/json/data/entity/competitors" />
+    <attr name="customers" xs:type="string" readonly="False" other:xPath="/json/data/entity/customers" />
+    <attr name="investments" xs:type="string" readonly="False" other:xPath="/json/data/entity/investments" />
+    <attr name="ipo.date.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/ipo/date/precision" />
+    <attr name="ipo.date.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/ipo/date/str" />
+    <attr name="ipo.date.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/ipo/date/timestamp" />
+    <attr name="ipo.stockExchange" xs:type="string" readonly="False" other:xPath="/json/data/entity/ipo/stockExchange" />
+    <attr name="monthlyTraffic" xs:type="long" readonly="False" other:xPath="/json/data/entity/monthlyTraffic" />
+    <attr name="monthlyTrafficGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/monthlyTrafficGrowth" />
+    <attr name="parentCompany.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/parentCompany/name" />
+    <attr name="parentCompany.summary" xs:type="string" readonly="False" other:xPath="/json/data/entity/parentCompany/summary" />
+    <attr name="parentCompany.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/parentCompany/diffbotUri" />
+    <attr name="partnerships" xs:type="string" readonly="False" other:xPath="/json/data/entity/partnerships" />
+    <attr name="predecessors" xs:type="string" readonly="False" other:xPath="/json/data/entity/predecessors" />
+    <attr name="quarterlyRevenues" xs:type="string" readonly="False" other:xPath="/json/data/entity/quarterlyRevenues" />
+    <attr name="remoteScore" xs:type="double" readonly="False" other:xPath="/json/data/entity/remoteScore" />
+    <attr name="revenue.currency" xs:type="string" readonly="False" other:xPath="/json/data/entity/revenue/currency" />
+    <attr name="revenue.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/revenue/value" />
+    <attr name="secForms" xs:type="string" readonly="False" other:xPath="/json/data/entity/secForms" />
+    <attr name="stock.exchange" xs:type="string" readonly="False" other:xPath="/json/data/entity/stock/exchange" />
+    <attr name="stock.from.precision" xs:type="int" readonly="False" other:xPath="/json/data/entity/stock/from/precision" />
+    <attr name="stock.from.str" xs:type="string" readonly="False" other:xPath="/json/data/entity/stock/from/str" />
+    <attr name="stock.from.timestamp" xs:type="long" readonly="False" other:xPath="/json/data/entity/stock/from/timestamp" />
+    <attr name="stock.symbol" xs:type="string" readonly="False" other:xPath="/json/data/entity/stock/symbol" />
+    <attr name="subsidiaries" xs:type="string" readonly="False" other:xPath="/json/data/entity/subsidiaries" />
+    <attr name="successors" xs:type="string" readonly="False" other:xPath="/json/data/entity/successors" />
+    <attr name="suppliers" xs:type="string" readonly="False" other:xPath="/json/data/entity/suppliers" />
+    <attr name="technographics" xs:type="string" readonly="False" other:xPath="/json/data/entity/technographics" />
+    <attr name="totalInvestment.currency" xs:type="string" readonly="False" other:xPath="/json/data/entity/totalInvestment/currency" />
+    <attr name="totalInvestment.value" xs:type="decimal" readonly="False" other:xPath="/json/data/entity/totalInvestment/value" />
+    <attr name="ultimateParent.name" xs:type="string" readonly="False" other:xPath="/json/data/entity/ultimateParent/name" />
+    <attr name="ultimateParent.diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/ultimateParent/diffbotUri" />
+    <attr name="wikipediaPageviews" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviews" />
+    <attr name="wikipediaPageviewsGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsGrowth" />
+    <attr name="wikipediaPageviewsLastQuarter" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastQuarter" />
+    <attr name="wikipediaPageviewsLastQuarterGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastQuarterGrowth" />
+    <attr name="wikipediaPageviewsLastYear" xs:type="int" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastYear" />
+    <attr name="wikipediaPageviewsLastYearGrowth" xs:type="double" readonly="False" other:xPath="/json/data/entity/wikipediaPageviewsLastYearGrowth" />
+    <attr name="yearlyRevenues" xs:type="string" readonly="False" other:xPath="/json/data/entity/yearlyRevenues" />
+
+    <!-- Metadata -->
+    <attr name="nbOrigins" xs:type="int" readonly="False" other:xPath="/json/data/entity/nbOrigins" />
+    <attr name="crawlTimestamp" xs:type="int" readonly="False" other:xPath="/json/data/entity/crawlTimestamp" />
+    <attr name="id" xs:type="string" readonly="False" other:xPath="/json/data/entity/id" />
+    <attr name="diffbotUri" xs:type="string" readonly="False" other:xPath="/json/data/entity/diffbotUri" />
+    <attr name="importance" xs:type="double" readonly="False" other:xPath="/json/data/entity/importance" />
+    <attr name="allUris" xs:type="string" readonly="False" other:xPath="/json/data/entity/allUris" />
+    <attr name="origins" xs:type="string" readonly="False" other:xPath="/json/data/entity/origins" />
+    
+    <!-- Input parameters-->
+    <input name="dql" xs:type="String" required="False" />
+>>>>>>> Stashed changes
   </api:info>
   
-  <!-- Setting global parameters -->
+  <!-- Set global parameters -->
   <api:set attr="ContentType" value="application/json" /> 
   
   <!-- Set authorization parameters -->
-
-  <!-- Using APIKey --> 
   <api:validate attr="_connection.APIToken" desc="The APIToken must be set in ProfileSettings connection property for authentication. See Help for more details." />
   <api:set attr="auth" value="[_connection.APIToken]" />
   
+<<<<<<< Updated upstream
   <!-- Build the DQL query dynamically -->
   <api:set attr="dqlquery" value="type:Organization" />
 
@@ -242,12 +384,20 @@
 
   <api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&amp;query=[dqlquery]" />
   <api:set attr="XPath" value="/data" />
+=======
+  <!-- Set request parameters -->
+	<api:check attr="_input.dql">
+    <!-- DQL: Query with DQL. Learn more at https://docs.diffbot.com/docs/kg-search -->
+    <api:set attr="URI" value="https://kg.diffbot.com/kg/v3/dql?token=[auth]&query={dql}" />
+  </api:check>
+  
+  <api:setc attr="XPath" value="/data" />
+>>>>>>> Stashed changes
   <api:set attr="DataModel" value="FlattenedDocuments" />
   <api:set attr="PageIdColumns" value="True" />
-  
   <api:set attr="EnablePaging" value="False" />
   <api:script method="GET">
-    <api:set attr="method" value="GET" />
+	<api:set attr="method" value="GET" />
     <api:call op="apisadoExecuteJSONGet">
       <api:push />
     </api:call>
