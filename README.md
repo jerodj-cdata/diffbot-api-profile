@@ -1,5 +1,7 @@
 # CData API Profile for Diffbot
 
+This repo is archival. For the live repo, please visit [https://github.com/diffbot/cdata-diffbot-api-profile](https://github.com/diffbot/cdata-diffbot-api-profile)
+
 A CData API Driver profile that enables SQL-based access to the [Diffbot Knowledge Graph API](https://www.diffbot.com/products/knowledge-graph/).
 
 ## Overview
